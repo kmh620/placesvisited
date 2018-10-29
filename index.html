@@ -2,42 +2,47 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <title>Places Visited</title>
     <script src="js/jquery-3.3.1.js" type="text/javascript"></script>
-    <script src="js/scripts.js" type="text/javascript"></script>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/styles.css">
-
-    <title>Places Visited</title>
+    <script src="js/scripts.js" type="text/javascript"></script>
   </head>
+
   <body>
-    <h1>PLaces you have visited</h1>
+    <h1>Places you have visited</h1>
     <p>This is a Web page that helps you to keep track of all the places you've been.It displays the properties of the place thats been visited.Properties  like location, landmarks, time of year, notes wil be displayed.</p>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <form id="add-place" class="form-group">
+          <label for="city" >City Name </label>
+          <input type="text" class="form-control"id="city">
+          <label for="landmark" >Landmarks</label>
+          <input type="text" id="landmark" class="form-control">
+          <label for="dates" >Dates Visited</label>
+          <input type="text" id="dates" class="form-control">
+          <label for="notes" >Notes</label>
+          <input type="text" id="notes" class="form-control">
+          <button type="submit">Add Destination!</button>
+          </form>
+        </div>
 
-    <h2>Add Place</h2>
-    <form id="add-place">
-    <label for="city">City Name</label>
-    <input type="text" id="city">
-    <label for="landmark">Landmarks</label>
-    <input type="text" id="landmark">
-    <label for="dates">Dates Visited</label>
-    <input type="text" id="dates">
-    <label for="notes">Notes</label>
-    <input type="text" id="notes">
-    <button type="submit">Add</button>
-    </form>
+      </div>
 
+    </div>
     <h2>Places:</h2>
-     <ul id="contacts">
-     </ul>
+    <ul id="placeList">
+    </ul>
 
-  <div id="showresult">
-    <p>Location: <span class="location"></span></p>
-    <p>Landmark(s): <span class="landmark"></span></p>
-    <p>Dates: <span class="dates"></span></p>
-    <p>Notes: <span class="notes"></span></p>
-  </div>
+    <div id="showresult">
+      <p>Location: <span class="location"></span></p>
+      <p>Landmark(s): <span class="landmark"></span></p>
+      <p>Dates: <span class="dates"></span></p>
+      <p>Notes: <span class="notes"></span></p>
+    </div>
 
 
 
   </body>
-</html>
+  </html>
