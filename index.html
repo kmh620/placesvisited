@@ -13,7 +13,31 @@
     <h1>PLaces you have visited</h1>
     <p>This is a Web page that helps you to keep track of all the places you've been.It displays the properties of the place thats been visited.Properties  like location, landmarks, time of year, notes wil be displayed.</p>
 
-    <img src="images/portland.jpg" alt="Portland Downtown">
-    <img src="images/Seattle.jpg" alt="Seattle Spaceneedle">
+    <h2>Add Place</h2>
+    <form id="add-place">
+    <label for="city">City Name</label>
+    <input type="text" id="city">
+    <label for="landmark">Landmarks</label>
+    <input type="text" id="landmark">
+    <label for="dates">Dates Visited</label>
+    <input type="text" id="dates">
+    <label for="notes">Notes</label>
+    <input type="text" id="notes">
+    <button type="submit">Add</button>
+    </form>
+
+    <h2>Places:</h2>
+     <ul id="contacts">
+     </ul>
+
+  <div id="showresult">
+    <p>Location: <span class="location"></span></p>
+    <p>Landmark(s): <span class="landmark"></span></p>
+    <p>Dates: <span class="dates"></span></p>
+    <p>Notes: <span class="notes"></span></p>
+  </div>
+
+
+
   </body>
 </html>
