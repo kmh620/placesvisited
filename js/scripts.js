@@ -1,5 +1,6 @@
 function PlaceBeen() {
-  this.placesbeen = []
+  this.placesbeen = [],
+  this.currentId = 0
 }
 
 function Place(location, landmark, dates, notes) {
@@ -10,8 +11,14 @@ function Place(location, landmark, dates, notes) {
 }
 
 PlaceBeen.prototype.addPlace = function(place) {
+  place.id = this.assignId();
   this.placesbeen.push(place);
   return this.location + this.landmark + this.dates + this.notes;
+}
+
+PlaceBeen.prototype.assignId = function() {
+  this.currentId += 1;
+  return this.currentId;
 }
 //User Interface Logic
 var placeList = new PlaceBeen();
@@ -30,6 +37,7 @@ $(document).ready(function() {
   $("li").click(function(){
     $("#showresult").slideToggle();
     //$("#showresult").addClass("light");
+  //  $("#showresult.location").text(inputtedCity);
   });
 
 });
