@@ -41,7 +41,7 @@ function displayPlaceDetails(placeListToDisplay){
   var locationsList = $("ul#placeList");
   var htmlForLocationInfo = "";
   placeListToDisplay.placesbeen.forEach(function(place){
-    htmlForLocationInfo += "<li id=" + place.id + ">" + place.location + "</li>";
+    htmlForLocationInfo += "<li id=" + place.id + ">" + place.location + " " + place.landmark + " " + place.dates + " " + place.notes + "</li>";
   });
   locationsList.html(htmlForLocationInfo);
 };
@@ -57,18 +57,13 @@ $(document).ready(function() {
   placeList.addPlace(newPlace);
 
 
-  displayPlaceDetails(placeList);
+  $("#placeList").append("<li>" + inputtedCity + "</li>");
 
-  //$("#placeList").append("<li>" + inputtedCity + "</li>");
-  //
-  // $("li").click(function() {
-  // $("#showresult").slideToggle(function() {
-  //
-  //   })
-    //$("#showresult").addClass("light");
-  //  $("#showresult.location").text(inputtedCity);
+
+
+    $("li").click(function(event) {
+      $("#showresult").toggle(displayPlaceDetails(placeList));
+      $("#showresult").hide();
+    });
   });
-
-
-
 });
